@@ -134,14 +134,25 @@ nav.links a:hover{opacity:1}
 .inside .ip1{left:-60px;top:-70px;width:210px;opacity:.5}
 .inside .eyebrow{color:var(--gold)}
 .inside .lede{color:rgba(248,243,232,.8)}
-.chapters{margin-top:2.6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.chip{background:rgba(248,243,232,.06);border:1px solid rgba(248,243,232,.16);border-radius:14px;padding:1.05rem 1.2rem;transition:background .2s,border-color .2s}
-.chip:hover{background:rgba(248,243,232,.1);border-color:rgba(226,183,92,.6)}
-.chip b{display:block;font-family:var(--display);font-weight:400;font-size:1.05rem;letter-spacing:.02em;margin-bottom:.2rem}
-.chip span{font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.chapters{margin-top:2.6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.flip{perspective:1200px;min-height:330px}
+.flip-inner{position:relative;width:100%;height:100%;min-height:330px;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,.1,.2,1);cursor:pointer;border:none;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:1.4rem 1.35rem;display:flex;flex-direction:column}
+.face-front{background:rgba(248,243,232,.06);border:1px solid rgba(248,243,232,.16);justify-content:space-between;transition:background .2s,border-color .2s}
+.flip:hover .face-front{background:rgba(248,243,232,.1);border-color:rgba(226,183,92,.6)}
+.face-front .ch-num{font-family:var(--label);font-weight:700;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.face-front b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1.25;letter-spacing:.02em;margin:.6rem 0 .35rem;color:var(--cream)}
+.face-front .dist{font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.face-front .hint{margin-top:auto;padding-top:1rem;font-family:var(--label);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,243,232,.45)}
+.face-back{background:var(--cream);color:var(--ink);border:1px solid rgba(248,243,232,.16);transform:rotateY(180deg);overflow-y:auto}
+.face-back .tease-head{font-family:var(--display);font-size:1.02rem;line-height:1.3;color:var(--navy);margin-bottom:.55rem}
+.face-back p{font-size:.84rem;line-height:1.55;color:var(--ink-soft)}
+.face-back .close-x{margin-top:auto;padding-top:.8rem;font-family:var(--label);font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep)}
+@media (prefers-reduced-motion:reduce){.flip-inner{transition:none}}
 .inside .note{margin-top:2rem;font-size:.95rem;color:rgba(248,243,232,.65);font-style:italic}
 @media(max-width:880px){.chapters{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.chapters{grid-template-columns:1fr}}
+@media(max-width:600px){.chapters{grid-template-columns:1fr}.flip,.flip-inner{min-height:300px}}
 
 /* ---------- audiences ---------- */
 .audiences{padding:5.5rem 0}
@@ -214,7 +225,7 @@ footer a:hover{color:var(--gold)}
       <p class="eyebrow">A crowdsourced book from America's public schools</p>
       <h1>Purposeful Technology, <span class="t">Powerful Learning</span></h1>
       <span class="ribbon">You Can't Ban Possibility</span>
-      <p class="sub">Across the country, lawmakers are debating how much screen time belongs in schools. This book asks a different question: what happens to students when we take the possibility away? Twelve districts. Real classrooms. Documented stories of technology used with intention.</p>
+      <p class="sub">Across the country, lawmakers are debating how much screen time belongs in schools. This book asks a different question: what happens to students when we take the possibility away? Thirteen districts. Real classrooms. Documented stories of technology used with intention.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#stories">Read the Stories</a>
         <a class="btn btn-ghost" href="#book">Inside the Book</a>
@@ -243,7 +254,7 @@ footer a:hover{color:var(--gold)}
       <div class="stats">
         <div class="stat"><b>11</b><span>states have passed screen-limiting legislation in the past year</span></div>
         <div class="stat"><b>12+</b><span>more states have considered similar measures</span></div>
-        <div class="stat"><b>12</b><span>districts documented in this book, coast to coast</span></div>
+        <div class="stat"><b>13</b><span>districts documented in this book, coast to coast</span></div>
         <div class="stat"><b>1</b><span>question at the center: not "how much?" but "for what purpose?"</span></div>
       </div>
     </div>
@@ -296,22 +307,179 @@ footer a:hover{color:var(--gold)}
   <div class="wrap">
     <div class="reveal" style="max-width:66ch">
       <p class="eyebrow">Inside the book</p>
-      <h2 class="display" style="margin:.7rem 0 1rem">Twelve districts. One argument.</h2>
+      <h2 class="display" style="margin:.7rem 0 1rem">Thirteen districts. One argument.</h2>
       <p class="lede">Each chapter pairs a district's story with the peer-reviewed research behind it, an implementation blueprint other schools can follow, and the workforce skills the work builds. National documentation effort. Research-grounded. Leadership-centered. Honest about guardrails.</p>
     </div>
     <div class="chapters">
-      <div class="chip reveal"><b>Speak Your Crazy</b><span>La Crosse, WI</span></div>
-      <div class="chip reveal"><b>From Urgency to Agency</b><span>Highland Park &amp; Highwood, IL</span></div>
-      <div class="chip reveal"><b>Recognized</b><span>Meriden, CT</span></div>
-      <div class="chip reveal"><b>A Common Visual Language</b><span>Mont Belvieu, TX</span></div>
-      <div class="chip reveal"><b>Go Where They Are</b><span>Durango, CO</span></div>
-      <div class="chip reveal"><b>Explain It to a 9-Year-Old</b><span>Lindenhurst, NY</span></div>
-      <div class="chip reveal"><b>From Consume to Create</b><span>Delaware, OH</span></div>
-      <div class="chip reveal"><b>A Real Band</b><span>Dwight Global Online</span></div>
-      <div class="chip reveal"><b>If It's AI-able, It's Not a Good Question</b><span>Stokes County, NC</span></div>
-      <div class="chip reveal"><b>The Bunker Hill Advantage</b><span>Bunker Hill, IL</span></div>
-      <div class="chip reveal"><b>Trust Us With Real Work</b><span>Angola, IN</span></div>
-      <div class="chip reveal"><b>It Just Happens</b><span>Agua Fria, AZ</span></div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 1: Speak Your Crazy. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 01</span><b>Speak Your Crazy</b><span class="dist">La Crosse, WI</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The Small School That Launched the Future First</span>
+            <p>La Crosse Polytechnic has no science lab, no workshop, no commercial kitchen &mdash; just 80 to 90 students and teachers who refused to accept that as a limit. When one educator &ldquo;spoke her crazy,&rdquo; a denied grant for a single Apple Vision Pro grew into the world&rsquo;s first K&ndash;12 launch at scale. The technology became the building the school never had.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 2: From Urgency to Agency. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 02</span><b>From Urgency to Agency</b><span class="dist">Highland Park &amp; Highwood, IL</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The District Where Eighth Graders Helped Write the AI Policy</span>
+            <p>North Shore School District 112 didn&rsquo;t respond to AI with panic or prohibition. It chose &ldquo;Innovation with Guardrails&rdquo; &mdash; a walled garden of vetted tools and a graduated continuum stretching from fourth-grade English Learners to eighth graders who co-authored the district&rsquo;s board-adopted AI policy. Along the way, a student became Illinois&rsquo; champion in the Presidential AI Challenge. Purposeful governance turned urgency into agency.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 3: From Consume to Create. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 03</span><b>From Consume to Create</b><span class="dist">Delaware, OH</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">She Asked for Five Years. She Had It Running in Two.</span>
+            <p>When Dr. Misty Swanger returned to Delaware City Schools, every student had a device &mdash; and most were using it to consume, not create. Her answer: two PacerSpaces, maker labs where every child in the district learns what it feels like to design, print, engrave, and build something real before leaving eighth grade. The screens stopped doing the work students should be doing.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 4: Recognized. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 04</span><b>Recognized</b><span class="dist">Meriden, CT</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">Sixteen Years of Proof That Banning Doesn&rsquo;t Work</span>
+            <p>Meriden Public Schools is often cited as the lowest-funded district in Connecticut, where 81% of students qualify for free or reduced-price meals. For sixteen years, its one-to-one device strategy has been the pipeline to opportunity &mdash; paired with a 71% drop in suspensions and a 96% drop in expulsions since 2010. The question was never screens versus no screens. It was equity versus the gap.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 5: A Common Visual Language. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 05</span><b>A Common Visual Language</b><span class="dist">Mont Belvieu, TX</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">&ldquo;Look! I Found the Chloroplast!&rdquo;</span>
+            <p>In a Barbers Hill ISD science classroom, a quiet emergent bilingual sixth grader put on a VR headset, stepped inside a plant cell, and found her voice. The district&rsquo;s grant-funded ClassVR carts and tight coaching model give every learner a common visual language for the words on the page &mdash; and its own tech coach agrees with the skeptics: overuse is misuse. Purpose comes first.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 6: Go Where They Are. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 06</span><b>Go Where They Are</b><span class="dist">Durango, CO</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">A Classroom on Wheels for 1,200 Square Miles</span>
+            <p>Durango School District covers an area roughly the size of Rhode Island, serving students from 32 Native American tribes and remote mountain communities. Its answer to distance: go where they are &mdash; including a solar-powered retrofitted school bus carrying 3D printers, robotics, and VR to grange halls and mobile-home communities. As one sixth grader put it, &ldquo;It will be pretty life-changing.&rdquo;</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 7: Explain It to a 9-Year-Old. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 07</span><b>Explain It to a 9-Year-Old</b><span class="dist">Lindenhurst, NY</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The Teenagers Teaching Every Fourth Grader About AI</span>
+            <p>Lindenhurst has no instructional coaches and no contractual PD time &mdash; and every fourth grader in the district learns about artificial intelligence anyway. Each May, high school computer science students travel to all six elementary schools to teach MIT&rsquo;s Day of AI curriculum themselves. As one senior reflected, you don&rsquo;t really understand something until you can explain it to a 9-year-old.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 8: Small District, Big Things. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 08</span><b>Small District, Big Things</b><span class="dist">Beloit Turner, WI</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">Designed by One, Taught by Many</span>
+            <p>When Beloit Turner opened a brand-new STEAM lab, it had no STEAM teacher &mdash; and no budget for one. So library media specialist Liz Langer designed every lesson herself, built like flight checklists, and the classroom teachers who know their students best deliver them. Five years later, kids in neighboring towns call her the Steam Lady. Technology didn&rsquo;t replace great teaching; it scaled it.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 9: A Real Band. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 09</span><b>A Real Band</b><span class="dist">Dwight Global Online</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">A Real Band, Four Continents, No Rehearsal Room</span>
+            <p>The vocalist lives in Dubai. The violinist is in Peru. The student mixing the final track is in the United States. Dwight Global&rsquo;s student-led Music Club built a polished multi-track arrangement across four continents &mdash; about one hour a week &mdash; and its members called themselves &ldquo;a real band.&rdquo; At the world&rsquo;s first fully online IB Diploma Programme, technology didn&rsquo;t imitate the rehearsal room. It reimagined it.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 10: Trust Us With Real Work. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 10</span><b>Trust Us With Real Work</b><span class="dist">Angola, IN</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The Students Who Coached Their Own Teachers</span>
+            <p>At Angola High School in rural northeast Indiana, the High Tech Hornets weren&rsquo;t the Chromebook repair team &mdash; they were the pedagogy team. For four years, students served as instructional design partners, coaching their own teachers to move beyond digital worksheets toward learning technology makes newly possible. Their lesson still stands: when teachers trust students with real work, students rise to it.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 11: If It's AI-able, It's Not a Good Question. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 11</span><b>If It&rsquo;s AI-able, It&rsquo;s Not a Good Question</b><span class="dist">Stokes County, NC</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">Two People, Seventeen Schools, and a New Digital Divide</span>
+            <p>When Dr. Kimberley Thompson-Hairston&rsquo;s own children came home talking about a ChatGPT cheating incident, she saw a new digital divide forming &mdash; not in devices, but in fluency. With a two-person team and seventeen schools, Stokes County built K&ndash;12 AI literacy that produced state-recognized teacher leaders, prize-winning fifth-grade writers, and better questions everywhere. Because if it&rsquo;s AI-able, it&rsquo;s not a good question.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 12: The Bunker Hill Advantage. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 12</span><b>The Bunker Hill Advantage</b><span class="dist">Bunker Hill, IL</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The Superintendent Who Asked the Kids</span>
+            <p>Everyone was debating student screen time &mdash; so Dr. Todd Dugan asked the students. In this 600-student rural Illinois district, his Innovation Council of sixth through twelfth graders &ldquo;hijacked&rdquo; his project and turned it into the Student Voice Sync Project, using real AI tools to investigate how their peers actually learn with technology. Their verdict wasn&rsquo;t too much screen time. It was too much boring screen time.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
+      <div class="flip reveal">
+        <button class="flip-inner" type="button" aria-expanded="false" aria-label="Chapter 13: It Actually Happens. Activate to read the teaser.">
+          <span class="face face-front">
+            <span><span class="ch-num">Chapter 13</span><b>It Actually Happens</b><span class="dist">Agua Fria, AZ</span></span>
+            <span class="hint">Tap to read the teaser &#8594;</span>
+          </span>
+          <span class="face face-back">
+            <span class="tease-head">The EdTech No Student Ever Opens</span>
+            <p>It started with a tardy line: two hundred students, handwritten passes, an hour of lost class time every morning. Former math teacher Luke Allpress wrote code that cleared it in five minutes. Now Agua Fria&rsquo;s in-house team of educator-programmers builds tools that flag at-risk students and put data where teachers need it. Some work is binary &mdash; with the right technology, it actually happens.</p>
+            <span class="close-x">&#8592; Tap to flip back</span>
+          </span>
+        </button>
+      </div>
     </div>
     <p class="note">Every chapter is reviewed and approved by the district it features before publication.</p>
   </div>
@@ -335,7 +503,7 @@ footer a:hover{color:var(--gold)}
       </div>
       <div class="aud a3 reveal">
         <p class="who">Educators</p>
-        <p>Implementation blueprints from twelve districts that got it right: the guardrails, the professional development, and the lessons learned along the way.</p>
+        <p>Implementation blueprints from thirteen districts that got it right: the guardrails, the professional development, and the lessons learned along the way.</p>
       </div>
     </div>
   </div>
