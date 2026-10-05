@@ -66,7 +66,8 @@ nav.links a:hover{opacity:1}
 .btn-ghost:hover{border-color:var(--cream)}
 .btn-navy{background:var(--navy);color:var(--cream)}
 .btn-navy:hover{background:var(--navy-deep)}
-@media(max-width:760px){nav.links a.hide-m{display:none}}
+@media(max-width:760px){nav.links a.hide-m{display:none}nav.links{gap:.55rem}nav.links .btn{padding:.58rem .95rem;font-size:.78rem}}
+@media(max-width:480px){.wm-text span{display:none}.wm-text b{font-size:.84rem}nav.links .btn{padding:.52rem .8rem;font-size:.72rem;letter-spacing:.03em}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:var(--navy);color:var(--cream);overflow:hidden;padding:6.5rem 0 7rem}
@@ -121,6 +122,7 @@ nav.links a:hover{opacity:1}
 .card p.story{color:var(--ink);flex:1}
 .card .ban{border-top:2px dashed rgba(196,104,92,.4);padding-top:.9rem;font-style:italic;font-weight:600;color:var(--coral);font-size:.98rem}
 @media(max-width:880px){.cards{grid-template-columns:1fr}}
+
 
 /* ---------- inside the book ---------- */
 .inside{background:var(--navy);color:var(--cream);padding:5.5rem 0;position:relative;overflow:hidden}
